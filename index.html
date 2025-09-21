@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula 1 | Desenvolvimento Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--
+    Conceitos fundamentais:
+    1. HTML é a estrutura do conteúdo. Define títulos, parágrafos, links, formulários e a organização da página.
+    2. A tag <meta name="viewport"> facilita a adaptação do site a telas pequenas, como celulares.
+    3. O arquivo CSS é referenciado aqui e cuida da apresentação visual.
+    4. O JavaScript é importado no final do body para não atrasar o carregamento do conteúdo.
+    -->
+</head>
+<body>
+    <header class="topo">
+        <h1>Primeiros passos em HTML5, CSS e JavaScript</h1>
+        <nav class="menu">
+            <!--
+            A navegação (nav) aponta para seções dentro da mesma página.
+            Cada link com href indicando com # rola até o elemento com o id correspondente.
+            -->
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+            <a href="teste_php.php">Teste do PHP</a>
+        </nav>
+    </header>
+
+    <main id="inicio" class="conteudo">
+        <section class="secao">
+            <h2>Bem-vinda e bem-vindo</h2>
+            <p>
+                Aqui você aprenderá conceitos básicos
+                enquanto constrói algo funcional. Leia os comentários no código e avance
+                com o passo a passo do arquivo. <strong>ENVIAR O ARQUIVO ZIPADO</strong>.
+            </p>
+        </section>
+
+        <section id="sobre" class="secao">
+            <h2>O que é cada tecnologia</h2>
+            <article>
+                <h3>HTML</h3>
+                <p>
+                    Linguagem de marcação para estruturar conteúdo. Pense em seções, títulos, parágrafos e formulários.
+                </p>
+            </article>
+            <article>
+                <h3>CSS</h3>
+                <p>
+                    Folhas de estilo para aparência. Define cores, fontes, espaçamentos e organização visual.
+                </p>
+            </article>
+            <article>
+                <h3>JavaScript</h3>
+                <p>
+                    Linguagem de programação executada no navegador. Permite interatividade, validações e respostas a eventos.
+                </p>
+            </article>
+            <article>
+                <h3>PHP</h3>
+                <p>
+                    Linguagem de programação executada no servidor. Recebe dados do formulário, processa e devolve uma resposta.
+                </p>
+            </article>
+        </section>
+
+        <section id="contato" class="secao">
+            <h2>Formulário simples</h2>
+            <p>
+                O atributo method="post" envia os dados no corpo da requisição.<br>
+                O atributo action indica o arquivo no servidor que fará o processamento.<br>
+                Cada campo tem um atributo name, que será a chave usada pelo PHP para ler o valor enviado.
+            </p>
+
+            <form id="form-contato" method="post" action="processa.php" novalidate>
+                <div class="grupo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required minlength="2" maxlength="80" placeholder="Digite seu nome">
+                </div>
+
+                <div class="grupo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="nome@exemplo.com">
+                </div>
+
+                <div class="grupo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" required rows="5" minlength="5" maxlength="500" placeholder="Escreva sua mensagem"></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+                <p id="aviso" class="aviso" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <small>Feito pela turma de Ciência da Computação.</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
